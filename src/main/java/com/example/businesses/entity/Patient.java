@@ -1,4 +1,4 @@
-package com.example.system.entity;
+package com.example.businesses.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -18,6 +19,7 @@ import lombok.Data;
  * @since 2023-03-14
  */
 @Data
+@Accessors(chain = true)
 @TableName("trauma_patient")
 @ApiModel(value = "Patient对象", description = "患者信息")
 public class Patient {

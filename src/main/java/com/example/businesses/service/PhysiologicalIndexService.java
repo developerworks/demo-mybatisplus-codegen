@@ -1,6 +1,6 @@
-package com.example.system.service;
+package com.example.businesses.service;
 
-import com.example.system.entity.PhysiologicalIndex;
+import com.example.businesses.entity.PhysiologicalIndex;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author developerworks
  * @since 2023-03-14
  */
-public interface IPhysiologicalIndexService extends IService<PhysiologicalIndex> {
+public interface PhysiologicalIndexService extends IService<PhysiologicalIndex> {
 
 }

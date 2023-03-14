@@ -1,6 +1,6 @@
-package com.example.system.mapper;
+package com.example.businesses.mapper;
 
-import com.example.system.entity.PhysiologicalIndex;
+import com.example.businesses.entity.PhysiologicalIndex;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

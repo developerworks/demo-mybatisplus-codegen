@@ -1,6 +1,6 @@
-package com.example.system.mapper;
+package com.example.businesses.mapper;
 
-import com.example.system.entity.Patient;
+import com.example.businesses.entity.Patient;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author developerworks
- * @since 2023-02-13
+ * @since 2023-03-14
  */
 public interface PatientMapper extends BaseMapper<Patient> {
 
