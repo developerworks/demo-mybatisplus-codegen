@@ -26,19 +26,20 @@ public class EnhanceFreemarkerTemplateEngine extends FreemarkerTemplateEngine {
 
         String entityName = tableInfo.getEntityName();
         String otherPath = this.getPathInfo(OutputFile.other);
-//        objectMap.forEach((s, o) -> {
-//            log.debug("key: " + s);
-//        });
-        log.debug("package: " + JSON.toJSONString(objectMap.get("package")));
+        //        objectMap.forEach((s, o) -> {
+        //            log.debug("key: " + s);
+        //        });
+        // log.debug("package: " + JSON.toJSONString(objectMap.get("package")));
         Map<String, String> o = (Map<String, String>) objectMap.get("package");
         String parent = o.get("Parent");
-        log.debug("parent: " + parent);
+        // log.debug("parent: " + parent);
         customFiles.forEach(customFile -> {
             String[] split = customFile.getFileName().split("\\.");
             String packageName = split[0].toLowerCase();
-
-
-            String absoluteFileName = String.format("%s/src/main/java/%s/%s/%s%s", projectPath, (parent.replaceAll("\\.", "/")), packageName, entityName, customFile.getFileName());
+            String absoluteFileName = String.format(
+                    "%s/src/main/java/%s/%s/%s%s",
+                    projectPath, (parent.replaceAll("\\.", "/")), packageName, entityName, customFile.getFileName()
+            );
             log.info(String.format("生成的文件名称: %s", absoluteFileName));
             this.outputFile(new File(absoluteFileName), objectMap, customFile.getTemplatePath(), true);
         });

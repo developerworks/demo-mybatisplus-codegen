@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.example.codegen.BaseController;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,17 +19,7 @@ public class Gen {
 
     public static void main(String[] args) throws IOException {
 
-//        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-//        String currentPath = classLoader.getResource("").getPath();
-//        System.out.println("当前路径：" + currentPath);
-
         System.out.println("当前路径:" + System.getProperty("user.dir"));
-
-
-        File directory = new File("");// 参数为空
-        String courseFile = directory.getCanonicalPath();
-        System.out.println("当前路径:" + courseFile);
-
         //    GlobalConfig.Builder gc = new GlobalConfig.Builder();
         //    gc.disableOpenDir();
         //    gc.author("developerworks");
