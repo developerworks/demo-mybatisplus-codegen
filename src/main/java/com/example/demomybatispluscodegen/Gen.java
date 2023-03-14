@@ -53,7 +53,8 @@ public class Gen {
                         // 设置作者
                         .author("developerworks")
                         // 开启 swagger 模式
-                        .enableSwagger()
+                        // .enableSwagger()
+                        .enableSpringdoc()
                         // 指定输出目录
                         .outputDir(projectPath + "/src/main/java")
                 )
@@ -102,32 +103,48 @@ public class Gen {
                 )
                 // 控制器
                 .strategyConfig(builder -> builder.controllerBuilder()
+                        // 覆盖
                         .enableFileOverride()
+                        // 使用 @RestController 而非 @Controller
                         .enableRestStyle()
+                        // 控制器父类
                         .superClass(BaseController.class)
                         .superClass("com.example.codegen.BaseController")
                 )
-                //
+                // 自定义对象生成(Dto,Vo,MapStruct)
                 .injectionConfig(builder -> {
                             List<CustomFile> customFiles = new ArrayList<>();
                             customFiles.add(new CustomFile.Builder()
-                                    .packageName("com.example.businesses.dto").fileName("Dto.java")
+                                    // DTO 包路径
+                                    .packageName("com.example.businesses.dto")
+                                    // 文件后缀
+                                    .fileName("Dto.java")
+                                    // 模板
                                     .templatePath("templates/customized/dto.java.ftl")
                                     .build()
                             );
                             customFiles.add(new CustomFile.Builder()
-                                    .packageName("com.example.businesses.dto").fileName("Vo.java")
+                                    // VO 包路径
+                                    .packageName("com.example.businesses.dto")
+                                    // 文件后缀
+                                    .fileName("Vo.java")
+                                    // VO 模板
                                     .templatePath("templates/customized/vo.java.ftl")
                                     .build()
                             );
                             customFiles.add(new CustomFile.Builder()
-                                    .packageName("com.example.businesses.mapstruct").fileName("MapStruct.java")
+                                    // 包路径
+                                    .packageName("com.example.businesses.mapstruct")
+                                    // 文件后缀
+                                    .fileName("MapStruct.java")
+                                    // 模板
                                     .templatePath("templates/customized/mapstruct.java.ftl")
                                     .build()
                             );
                             builder.customFile(customFiles);
                         }
                 )
+                // 自定义模板引擎
                 .templateEngine(new EnhanceFreemarkerTemplateEngine())
                 .execute();
     }
