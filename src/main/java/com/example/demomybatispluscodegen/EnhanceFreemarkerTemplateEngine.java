@@ -1,6 +1,6 @@
 package com.example.demomybatispluscodegen;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.config.builder.CustomFile;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;

@@ -122,11 +122,18 @@ public class Gen {
                 .injectionConfig(builder -> {
                             List<CustomFile> customFiles = new ArrayList<>();
                             customFiles.add(new CustomFile.Builder()
-                                    .packageName("com.example.businesses.dto").fileName("Dto.java").templatePath("templates/pojo/dto.java.ftl")
+                                    .packageName("com.example.businesses.dto").fileName("Dto.java")
+                                    .templatePath("templates/customized/dto.java.ftl")
                                     .build()
                             );
                             customFiles.add(new CustomFile.Builder()
-                                    .packageName("com.example.businesses.dto").fileName("Vo.java").templatePath("templates/pojo/vo.java.ftl")
+                                    .packageName("com.example.businesses.dto").fileName("Vo.java")
+                                    .templatePath("templates/customized/vo.java.ftl")
+                                    .build()
+                            );
+                            customFiles.add(new CustomFile.Builder()
+                                    .packageName("com.example.businesses.mapstruct").fileName("MapStruct.java")
+                                    .templatePath("templates/customized/mapstruct.java.ftl")
                                     .build()
                             );
                             builder.customFile(customFiles);
